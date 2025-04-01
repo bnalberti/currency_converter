@@ -1,3 +1,7 @@
+"""
+Capture program flow and errors using Python's built-in logging module
+"""
+
 import logging
 
 def setup_logging():

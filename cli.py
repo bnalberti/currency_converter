@@ -1,3 +1,7 @@
+"""
+Use argparse to accept user inputs via CLI arguments
+"""
+
 import argparse
 
 def parse_arguments():

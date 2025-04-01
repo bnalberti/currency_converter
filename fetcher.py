@@ -1,3 +1,8 @@
+"""
+Retrieves the exchange rates
+"""
+
+
 import requests
 import json
 from logger_config import setup_logging
