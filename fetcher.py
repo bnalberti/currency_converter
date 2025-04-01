@@ -8,6 +8,25 @@ from logger_config import setup_logging
 logger = setup_logging()
 
 def get_exchange_rate(base: str, target: str, use_mock: bool = False) -> float:
+    """
+    Retrieves the exchange rate between two currencies.
+
+    This function fetches the exchange rate for converting `base` currency to `target` currency. 
+    It can either use mock data from a JSON file (modck_rates) or retrieve live exchange rates from
+    apilayer exchangerates_data-api.
+
+    Args:
+        base (str): The currency code to convert from (e.g., "USD").
+        target (str): The currency code to convert to (e.g., "EUR").
+        use_mock (bool, optional): If True, fetches rates from a local mock JSON file. Defaults to False.
+
+    Returns:
+        float: The exchange rate from `base` to `target`.
+
+    Raises:
+        ValueError: If the requested currency is not found in mock data or API response.
+        ConnectionError: If there is an issue fetching data from the API.
+    """
     if use_mock:
         with open("data/mock_rates.json") as f:
             data = json.load(f)
